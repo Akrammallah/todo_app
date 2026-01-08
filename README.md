@@ -56,6 +56,10 @@ More troubleshooting details are available in the [TROUBLESHOOTING_VERCEL.md](./
 
 For the frontend to work properly, you must also deploy the backend API. See [FIXING_VERCEL_404.md](./FIXING_VERCEL_404.md) for detailed instructions on deploying the Python FastAPI backend and configuring CORS settings properly.
 
+## Diagnosing Persistent 404 Errors
+
+If you're still experiencing 404 errors after deployment, see [DIAGNOSE_404.md](./DIAGNOSE_404.md) for a step-by-step troubleshooting guide to identify and resolve the issue.
+
 ## Features
 
 - User authentication (signup/signin)
