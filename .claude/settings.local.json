@@ -7,7 +7,14 @@
       "Bash(git rev-parse --git-dir)",
       "Bash(python todo_app.py)",
       "Bash(timeout 10s python todo_app.py)",
-      "Bash(python test_todo_app.py)"
+      "Bash(python test_todo_app.py)",
+      "Bash(findstr:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/setup-plan.ps1\" -Json)",
+      "Bash(python -m uvicorn:*)",
+      "Bash(powershell:*)",
+      "Bash(dir \"C:\\\\Users\\\\M S Computer\\\\OneDrive\\\\Desktop\\\\todo_app\\\\backend\\\\todo.db\")",
+      "Bash(netstat:*)",
+      "Bash(dir frontend)"
     ]
   }
 }

@@ -1,12 +1,12 @@
 <!-- SYNC IMPACT REPORT:
-Version change: N/A → 1.0.0
-Added sections: All principles and governance sections
+Version change: 1.0.0 → 1.1.0
+Modified principles: None
+Added sections: Phase Technology Matrix (Phase I, II, III+)
 Removed sections: None
 Templates requiring updates:
-- .specify/templates/plan-template.md ✅ updated
-- .specify/templates/spec-template.md ✅ updated
-- .specify/templates/tasks-template.md ✅ updated
-- .specify/templates/commands/*.md ✅ updated
+- .specify/templates/plan-template.md ✅ aligned
+- .specify/templates/spec-template.md ✅ aligned
+- .specify/templates/tasks-template.md ✅ aligned
 Follow-up TODOs: None
 -->
 # Evolution of Todo Constitution
@@ -22,8 +22,47 @@ Agents must strictly adhere to approved specifications without deviation. No man
 ### III. Phase Governance
 Each development phase is strictly governed by its approved specification. Future-phase features must never leak into earlier phases. Architecture may evolve only through updated specifications and plans, not through implementation-level modifications.
 
-### IV. Technology Constraints
-The project must adhere to the approved technology stack: Python for backend services, Next.js for frontend (in later phases), FastAPI and SQLModel for API development, Neon DB for data persistence, OpenAI Agents SDK and MCP for agent communication, Docker and Kubernetes for containerization (in later phases), and Kafka/Dapr for messaging (in later phases).
+### IV. Phase Technology Matrix (AUTHORITATIVE)
+The project MUST strictly adhere to the technology matrix defined below. No technology may be introduced before its designated phase. This matrix is the authoritative technology policy for all phases.
+
+#### Phase I: Console Application (MVP)
+- **Backend**: Python in-memory data structures
+- **Database**: In-memory Python lists/dicts only (no persistence)
+- **Frontend**: Console/command-line interface (CLI)
+- **Authentication**: Not allowed (Phase II+)
+- **Architecture**: Single-file or simple module console application
+- **Rules**:
+  - No web frontend
+  - No database persistence
+  - No user authentication
+  - No external services or APIs
+
+#### Phase II: Full-Stack Web Application
+- **Backend**: Python REST API
+- **Database**: Neon Serverless PostgreSQL
+- **ORM/Data layer**: SQLModel or equivalent
+- **Frontend**: Next.js (React, TypeScript)
+- **Authentication**: Better Auth (signup/signin)
+- **Architecture**: Full-stack web application with separate backend and frontend
+- **Rules**:
+  - Web frontend is allowed
+  - Database persistence is required
+  - User authentication is required
+  - No AI or agent frameworks
+
+#### Phase III and Later: Advanced Infrastructure
+- **Backend**: Advanced cloud infrastructure (Kubernetes, microservices, etc.)
+- **Database**: Advanced data patterns (caching, replication, etc.)
+- **ORM/Data layer**: Advanced data access patterns
+- **Frontend**: Advanced frontend capabilities
+- **Authentication**: Advanced auth patterns (SSO, OAuth, etc.)
+- **Architecture**: Orchestration, agents, AI integration, distributed systems
+- **Rules**:
+  - AI and agent frameworks are allowed
+  - Advanced cloud infrastructure is allowed
+  - Orchestration and messaging systems are allowed
+
+**Phase Isolation Principle**: Technologies from later phases MUST NOT be introduced in earlier phases. Each phase builds on the previous phase's foundation without contaminating it with future-phase complexity.
 
 ### V. Quality Principles
 All code must follow clean architecture principles with stateless services where required, clear separation of concerns, and cloud-native readiness. Code must be testable, maintainable, and follow the smallest viable change principle.
@@ -33,21 +72,13 @@ All work must follow the smallest viable diff principle. No unrelated refactorin
 
 ## Additional Constraints
 
-### Technology Stack Requirements
-- Backend: Python with FastAPI and SQLModel
-- Database: Neon DB with proper schema evolution strategies
-- Frontend: Next.js (introduced in later phases)
-- Agent Communication: OpenAI Agents SDK and MCP protocols
-- Containerization: Docker and Kubernetes (in later phases)
-- Messaging: Kafka and Dapr (in later phases)
-
 ### Security and Compliance
 - No hardcoding of secrets or tokens; use proper environment configuration
 - Follow security best practices for all components
 - Maintain clear audit trails for all operations
-- Implement proper authentication and authorization patterns
+- Implement proper authentication and authorization patterns (Phase II+)
 
-## Development Workflow
+### Development Workflow
 
 ### Specification Process
 1. All features must begin with a detailed specification document
@@ -75,4 +106,4 @@ Amendments must be documented with clear rationale, approved by project stakehol
 
 The constitution remains stable across all phases and supersedes any conflicting practices or guidelines. Use this constitution as the primary reference for all development decisions.
 
-**Version**: 1.0.0 | **Ratified**: 2025-12-28 | **Last Amended**: 2025-12-28
+**Version**: 1.1.0 | **Ratified**: 2025-12-28 | **Last Amended**: 2025-12-29
