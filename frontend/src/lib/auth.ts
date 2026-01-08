@@ -1,5 +1,5 @@
-"""Auth utility functions (signup, signin, signout)."""
-import { signup, signin, signout } from "./api";
+// Auth utility functions (signup, signin, signout).
+import { signup as apiSignup, signin as apiSignin, signout as apiSignout } from "./api";
 
 // Store auth token in localStorage
 const AUTH_TOKEN_KEY = "auth_token";
@@ -40,7 +40,7 @@ export function clearAuthData(): void {
 
 // Wrapper functions that store auth data
 export async function signup(email: string, password: string) {
-  const user = await signup(email, password);
+  const user = await apiSignup(email, password);
   // In a real implementation, the backend would return a token
   // For now, we'll simulate it
   const token = `simulated_token_${user.id}`;
@@ -49,7 +49,7 @@ export async function signup(email: string, password: string) {
 }
 
 export async function signin(email: string, password: string) {
-  const user = await signin(email, password);
+  const user = await apiSignin(email, password);
   // In a real implementation, the backend would return a token
   // For now, we'll simulate it
   const token = `simulated_token_${user.id}`;
@@ -58,7 +58,7 @@ export async function signin(email: string, password: string) {
 }
 
 export async function signout() {
-  await signout();
+  await apiSignout();
   clearAuthData();
 }
 

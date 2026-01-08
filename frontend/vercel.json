@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "env": {
+    "NEXT_PUBLIC_BACKEND_URL": "https://your-backend-url.com"
+  },
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}
