@@ -39,8 +39,22 @@ The application has been tested and builds successfully. All configuration files
 
 The application requires the following environment variables:
 
-For the frontend (`frontend/.env.local`):
-- `NEXT_PUBLIC_BACKEND_URL`: URL of the backend API (e.g., http://localhost:8000 or your deployed backend URL)
+For the frontend (`frontend/.env.local` during development, or Vercel environment variables for production):
+- `NEXT_PUBLIC_BACKEND_URL`: URL of the backend API (e.g., http://localhost:8000 for local development or your deployed backend URL)
+
+## Troubleshooting Vercel Deployment
+
+If you encounter a 404 error after deploying to Vercel:
+1. Make sure your backend API is also deployed and accessible at a public URL
+2. Verify that the `NEXT_PUBLIC_BACKEND_URL` environment variable is set correctly in your Vercel project settings
+3. Check that your backend allows CORS from your Vercel frontend domain
+4. Ensure your backend's `ALLOWED_ORIGINS` environment variable includes your Vercel domain
+
+More troubleshooting details are available in the [TROUBLESHOOTING_VERCEL.md](./TROUBLESHOOTING_VERCEL.md) file.
+
+## Deploying the Backend API
+
+For the frontend to work properly, you must also deploy the backend API. See [FIXING_VERCEL_404.md](./FIXING_VERCEL_404.md) for detailed instructions on deploying the Python FastAPI backend and configuring CORS settings properly.
 
 ## Features
 

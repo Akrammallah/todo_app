@@ -23,7 +23,7 @@ class Settings:
     session_expire_hours: int = int(os.getenv("SESSION_EXPIRE_HOURS", "24"))
 
     # CORS
-    allowed_origins: List[str] = json.loads(os.getenv("ALLOWED_ORIGINS", '["http://localhost:3000"]'))
+    allowed_origins: List[str] = json.loads(os.getenv("ALLOWED_ORIGINS", '["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "https://localhost:3000", "https://localhost:3001", "https://localhost:3002", "*.vercel.app"]'))
 
 
 # Global settings instance
