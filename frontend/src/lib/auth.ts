@@ -41,18 +41,16 @@ export function clearAuthData(): void {
 // Wrapper functions that store auth data
 export async function signup(email: string, password: string) {
   const user = await apiSignup(email, password);
-  // In a real implementation, the backend would return a token
-  // For now, we'll simulate it
-  const token = `simulated_token_${user.id}`;
+  // Use the actual token from the API response
+  const token = user.access_token;
   setAuthData(token, user);
   return user;
 }
 
 export async function signin(email: string, password: string) {
   const user = await apiSignin(email, password);
-  // In a real implementation, the backend would return a token
-  // For now, we'll simulate it
-  const token = `simulated_token_${user.id}`;
+  // Use the actual token from the API response
+  const token = user.access_token;
   setAuthData(token, user);
   return user;
 }

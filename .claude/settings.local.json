@@ -14,7 +14,8 @@
       "Bash(powershell:*)",
       "Bash(dir \"C:\\\\Users\\\\M S Computer\\\\OneDrive\\\\Desktop\\\\todo_app\\\\backend\\\\todo.db\")",
       "Bash(netstat:*)",
-      "Bash(dir frontend)"
+      "Bash(dir frontend)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8000/)"
     ]
   }
 }
